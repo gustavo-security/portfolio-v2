@@ -1,0 +1,96 @@
+<article class="project-card">
+
+  <div class="project-card__image">
+    @if (project().image) {
+      <img
+        [src]="project().image"
+        [alt]="'Captura de tela do projeto ' + project().title"
+        loading="lazy"
+      />
+    } @else {
+      <div class="project-card__placeholder" aria-hidden="true">
+        <span>{{ project().title }}</span>
+        <small>SOFTWARE PROJECT</small>
+      </div>
+    }
+  </div>
+
+  <div class="project-card__body">
+
+    <span
+      class="project-card__status"
+      [class.project-card__status--progress]="project().status === 'in-progress'"
+    >
+      {{ project().status === 'completed' ? 'Concluído' : 'Em desenvolvimento' }}
+    </span>
+
+    <h3>{{ project().title }}</h3>
+
+    <p class="project-card__description">
+      {{ project().description }}
+    </p>
+
+    <div class="project-card__technologies">
+      @for (technology of project().technologies; track technology) {
+        <span>{{ technology }}</span>
+      }
+    </div>
+
+    <div class="project-card__actions">
+
+      <button
+        type="button"
+        class="project-card__details-button"
+        [attr.aria-expanded]="isExpanded()"
+        [attr.aria-controls]="'details-' + project().id"
+        (click)="toggleDetails()"
+      >
+        {{ isExpanded() ? 'Ocultar detalhes' : 'Ver detalhes' }}
+        <span aria-hidden="true">{{ isExpanded() ? '−' : '+' }}</span>
+      </button>
+
+      @if (project().githubUrl) {
+        <a
+          [href]="project().githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir repositório do projeto no GitHub"
+        >
+          GitHub ↗
+        </a>
+      }
+
+      @if (project().liveUrl) {
+        <a
+          [href]="project().liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Demo ↗
+        </a>
+      }
+
+    </div>
+
+    @if (isExpanded()) {
+      <div class="project-card__details" [id]="'details-' + project().id">
+
+        <h4>Problema</h4>
+        <p>{{ project().problem }}</p>
+
+        <h4>Solução</h4>
+        <p>{{ project().solution }}</p>
+
+        <h4>Desafios técnicos</h4>
+
+        <ul>
+          @for (challenge of project().challenges; track challenge) {
+            <li>{{ challenge }}</li>
+          }
+        </ul>
+
+      </div>
+    }
+
+  </div>
+</article>

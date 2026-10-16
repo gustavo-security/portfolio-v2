@@ -1,0 +1,79 @@
+
+<section class="experience">
+  <div class="experience__container">
+
+    <div class="experience__heading">
+      <span class="experience__eyebrow">
+        02 / EXPERIÊNCIA
+      </span>
+
+      <h2>Experiência profissional</h2>
+
+      <p>
+        Desenvolvimento de soluções reais, integração de sistemas
+        e infraestrutura em nuvem.
+      </p>
+    </div>
+
+    <div class="experience__timeline">
+      <div class="experience__marker" aria-hidden="true"></div>
+
+      <article class="experience__card">
+
+        <header class="experience__card-header">
+          <div>
+            <span class="experience__company">
+              Biobyte Sistemas
+            </span>
+
+            <h3>Estagiário em Desenvolvimento Full Stack</h3>
+
+            <span class="experience__type">
+              SaaS para a área da saúde · Remoto
+            </span>
+          </div>
+
+          <span class="experience__period">
+            Fev/2026 — Out/2026
+          </span>
+        </header>
+
+        <p class="experience__summary">
+          Atuação no desenvolvimento e manutenção de aplicações SaaS
+          voltadas para a área da saúde, participando da implementação
+          de funcionalidades, integrações, correções e melhorias
+          em sistemas utilizados no ambiente hospitalar.
+        </p>
+
+        <div class="experience__responsibilities">
+          @for (item of responsibilities; track item.title) {
+            <div class="experience__responsibility">
+              <span class="experience__check" aria-hidden="true">
+                ✓
+              </span>
+
+              <div>
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="experience__technologies">
+          <h4>TECNOLOGIAS UTILIZADAS</h4>
+
+          <div class="experience__tags">
+            @for (technology of technologies; track technology) {
+              <span class="experience__tag">
+                {{ technology }}
+              </span>
+            }
+          </div>
+        </div>
+
+      </article>
+    </div>
+
+  </div>
+</section>

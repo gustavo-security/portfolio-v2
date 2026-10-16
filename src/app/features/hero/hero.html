@@ -1,0 +1,62 @@
+
+<div class="hero">
+  <div class="hero__container">
+
+    <div class="hero__availability">
+      <span class="hero__status-dot"></span>
+      Disponível para oportunidades
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__greeting">
+        Olá, eu sou Gustavo Sales.
+      </p>
+
+      <h1 class="hero__title">
+        Desenvolvedor
+        <span>Full Stack.</span>
+      </h1>
+
+      <p class="hero__description">
+        Desenvolvedor com experiência profissional em aplicações
+        SaaS, atuando com Angular, TypeScript, Node.js e Express.
+        Graduando em Ciência da Computação pela PUC Minas,
+        com interesse em arquitetura de software, backend
+        e segurança de aplicações.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#projetos" class="btn btn--primary">
+          Ver projetos
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          [href]="resumeUrl"
+          class="btn btn--outline"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir currículo em PDF em uma nova aba"
+        >
+          Meu currículo
+          <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__footer">
+      <p class="hero__stack-label">
+        PRINCIPAIS TECNOLOGIAS
+      </p>
+
+      <div class="hero__technologies">
+        @for (technology of technologies; track technology) {
+          <span class="hero__tech">
+            {{ technology }}
+          </span>
+        }
+      </div>
+    </div>
+
+  </div>
+</div>

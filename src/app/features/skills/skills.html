@@ -1,0 +1,63 @@
+<div class="skills">
+  <div class="skills__container">
+
+    <div class="skills__heading">
+      <span class="skills__eyebrow">
+        04 / TECNOLOGIAS
+      </span>
+
+      <h2>Tecnologias & Competências</h2>
+
+      <p>
+        Ferramentas e tecnologias utilizadas em experiências
+        profissionais, projetos pessoais e estudos.
+      </p>
+    </div>
+
+    <div class="skills__grid">
+      @for (category of categories; track category.id) {
+        <article class="skills__card">
+
+          <div class="skills__card-heading">
+
+            <div class="skills__icon" aria-hidden="true">
+                @switch (category.id) {
+                    @case ('frontend') {
+                    <svg lucideMonitor [size]="24" [strokeWidth]="1.8"></svg>
+                    }
+                    @case ('backend') {
+                    <svg lucideServer [size]="24" [strokeWidth]="1.8"></svg>
+                    }
+                    @case ('database') {
+                    <svg lucideDatabase [size]="24" [strokeWidth]="1.8"></svg>
+                    }
+                    @case ('cloud') {
+                    <svg lucideCloud [size]="24" [strokeWidth]="1.8"></svg>
+                    }
+                    @case ('tools') {
+                    <svg lucideWrench [size]="24" [strokeWidth]="1.8"></svg>
+                    }
+                }
+            </div>
+
+
+            <div>
+              <h3>{{ category.title }}</h3>
+              <p>{{ category.description }}</p>
+            </div>
+          </div>
+
+          <div class="skills__technologies">
+            @for (technology of category.technologies; track technology) {
+              <span class="skills__technology">
+                {{ technology }}
+              </span>
+            }
+          </div>
+
+        </article>
+      }
+    </div>
+
+  </div>
+</div>

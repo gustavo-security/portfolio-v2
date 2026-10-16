@@ -1,0 +1,149 @@
+.skills {
+  padding: 110px 24px;
+  background: #0e1626;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    max-width: 750px;
+    margin-bottom: 48px;
+
+    h2 {
+      margin: 18px 0 14px;
+	  	font-size: var(--section-title-size);
+		  letter-spacing: var(--section-title-spacing);
+      line-height: 1.2;
+    }
+
+    p {
+      color: var(--color-muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #60a5fa;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    &::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--color-primary);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  &__card {
+    padding: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: var(--color-surface);
+
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      border-color: rgba(96, 165, 250, 0.5);
+      transform: translateY(-3px);
+    }
+  }
+
+  &__card-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 26px;
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+  }
+
+
+	&__icon {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		border-radius: 10px;
+		border: 1px solid rgba(96, 165, 250, 0.2);
+		background: rgba(37, 99, 235, 0.12);
+		color: #60a5fa;
+	}
+
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  &__technology {
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 7px;
+    background: #1b2940;
+    color: #cbd5e1;
+    font-size: 12px;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: rgba(96, 165, 250, 0.5);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 75px 24px;
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__card {
+      padding: 24px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills__card {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .skills__technology {
+    transition: none;
+  }
+}

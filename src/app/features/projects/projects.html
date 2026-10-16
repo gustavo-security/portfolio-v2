@@ -1,0 +1,25 @@
+<div class="projects">
+  <div class="projects__container">
+
+    <div class="projects__heading">
+      <span class="projects__eyebrow">
+        03 / PROJETOS
+      </span>
+
+      <h2>Projetos em destaque</h2>
+
+      <p>
+        Aplicações desenvolvidas para explorar tecnologias,
+        resolver problemas e aprofundar conhecimentos em
+        engenharia de software.
+      </p>
+    </div>
+
+    <div class="projects__grid">
+      @for (project of projects; track project.id) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+
+  </div>
+</div>

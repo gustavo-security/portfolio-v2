@@ -1,0 +1,67 @@
+
+<div class="about">
+  <div class="about__container">
+
+    <div class="about__heading">
+      <span class="about__eyebrow">
+        01 / SOBRE MIM
+      </span>
+
+      <h2>
+        Mais do que escrever código,
+        <span>gosto de entender problemas e construir soluções.</span>
+      </h2>
+    </div>
+
+    <div class="about__grid">
+
+      <div class="about__content">
+        <p>
+          Sou desenvolvedor Full Stack e graduando em
+          <strong>Ciência da Computação pela PUC Minas</strong>,
+          com experiência profissional no desenvolvimento
+          e manutenção de aplicações SaaS.
+        </p>
+
+        <p>
+          Durante minha experiência na Biobyte Sistemas,
+          trabalhei com <strong>Angular, TypeScript,
+          Node.js e Express</strong>, implementando funcionalidades,
+          APIs REST, regras de negócio e integrações com
+          bancos de dados.
+        </p>
+
+        <p>
+          Também atuei com infraestrutura em nuvem utilizando
+          <strong>AWS (IAM, S3 e EC2)</strong>, além de atividades
+          envolvendo processamento de dados, relatórios
+          e resolução de problemas em sistemas existentes.
+        </p>
+
+        <p>
+          Tenho interesse especial em desenvolvimento backend,
+          arquitetura de software, computação em nuvem
+          e segurança de aplicações. Busco evoluir
+          continuamente e aplicar boas práticas
+          no desenvolvimento de soluções reais.
+        </p>
+      </div>
+
+      <div class="about__highlights">
+        @for (highlight of highlights; track highlight.label) {
+          <article class="about__card">
+            <span class="about__card-label">
+              {{ highlight.label }}
+            </span>
+
+            <h3>{{ highlight.value }}</h3>
+
+            <p>{{ highlight.description }}</p>
+          </article>
+        }
+      </div>
+
+    </div>
+
+  </div>
+</div>

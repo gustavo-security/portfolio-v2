@@ -1,0 +1,73 @@
+<div class="contact">
+  <div class="contact__container">
+
+    <div class="contact__heading">
+      <span class="contact__eyebrow">
+        05 / CONTATO
+      </span>
+
+      <h2>Vamos construir algo juntos?</h2>
+
+      <p>
+        Estou aberto a oportunidades de desenvolvimento de software,
+        novos projetos e conexões profissionais.
+        Entre em contato por um dos canais abaixo.
+      </p>
+    </div>
+
+    <div class="contact__grid">
+      @for (contact of contacts; track contact.id) {
+        <a
+          class="contact__card"
+          [href]="contact.url"
+          [attr.target]="contact.external ? '_blank' : null"
+          [attr.rel]="contact.external ? 'noopener noreferrer' : null"
+        >
+
+
+
+        <div class="contact__icon" aria-hidden="true">
+            @switch (contact.icon) {
+                @case ('mail') {
+                <svg lucideMail [size]="23" [strokeWidth]="1.8"></svg>
+                    }
+
+                    @case ('linkedin') {
+                    <img
+                        src="assets/icons/linkedin.svg"
+                        alt=""
+                        width="23"
+                        height="23"
+                    />
+                    }
+
+                    @case ('github') {
+                    <img
+                        src="assets/icons/github.svg"
+                        alt=""
+                        width="23"
+                        height="23"
+                    />
+                    }
+                }
+        </div>
+
+
+
+          <div class="contact__info">
+            <h3>{{ contact.label }}</h3>
+            <p>{{ contact.description }}</p>
+          </div>
+
+
+            <span class="contact__arrow" aria-hidden="true">
+            <svg lucideArrowUpRight [size]="20"></svg>
+            </span>
+
+
+        </a>
+      }
+    </div>
+
+  </div>
+</div>

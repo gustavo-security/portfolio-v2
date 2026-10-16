@@ -1,0 +1,53 @@
+
+<header class="header">
+  <nav class="navbar container" aria-label="Navegação principal">
+
+    <a
+      class="logo"
+      href="#inicio"
+      (click)="closeMenu()"
+      aria-label="Gustavo Sales - Início"
+    >
+      GS<span>.</span>
+    </a>
+
+    <!-- Navegação desktop -->
+    <ul class="nav-links desktop-nav">
+      @for (item of navItems; track item.href) {
+        <li>
+          <a [href]="item.href">
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <!-- Botão mobile -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Alternar menu de navegação"
+      aria-controls="mobile-navigation"
+      [attr.aria-expanded]="isMenuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navegação mobile -->
+    @if (isMenuOpen()) {
+      <ul class="nav-links mobile-nav" id="mobile-navigation">
+        @for (item of navItems; track item.href) {
+          <li>
+            <a [href]="item.href" (click)="closeMenu()">
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    }
+
+  </nav>
+</header>
